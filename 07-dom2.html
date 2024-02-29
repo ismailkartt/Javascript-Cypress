@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+
+        .green{
+            color: green;
+            font-weight: bold;
+        }
+
+        .highlight{
+            background-color: aquamarine;
+            font-style: italic;
+        }
+
+        .big-size{
+            font-size: 5rem;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1 class="title green highlight" >DOCUMENT <span style="color: blue;">OBJECT</span> MODEL</h1>
+
+    <ul class="menu">
+        <li>Lorem, ipsum dolor.</li>
+        <li>Earum, laborum voluptates.</li>
+        <li>Repellat, facilis velit.</li>
+        <li>Fuga, explicabo eius?</li>
+    </ul>
+
+    <p class="about"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Laudantium ad <em>quia voluptate beatae, deserunt</em> ab impedit vero iusto,
+          illum eveniet adipisci molestias ratione eligendi maxime non tempore,
+           atque nostrum at.</span><span>Natus quo ipsa numquam ex. Perspiciatis,
+             vitae provident! Illo fuga dignissimos cupiditate voluptatem amet sunt
+              maiores quibusdam asperiores fugiat dolore! Nisi ab ut accusamus voluptas incidunt,
+               error optio blanditiis amet!</span></p>
+
+            <script>
+
+                const title = document.querySelector("h1.title");
+                title.innerHTML = "Hello DOM";
+
+                title.classList.add("big-size");
+
+                const text1 = document.querySelector(".about em");
+                console.log(text1)
+                text1.innerHTML = "<u>TEST</u>"
+
+
+            </script>
+
+
+</body>
+</html>
