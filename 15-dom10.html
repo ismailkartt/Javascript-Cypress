@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="price">
+    <button onclick="calculate()">Calculate</button>    
+
+    <p id="result"></p>
+
+    <script>
+        function calculate(){
+        const price = document.querySelector("#price");
+        const result = document.querySelector("#result");
+
+        let salary = price.value;
+
+        switch(true){
+            case (salary > 1500):
+                salary *= 0.85;
+                break;
+            case (salary > 1000):
+                salary *= 0.87;
+                break;
+            case (salary > 700):
+                salary *= 0.9;
+                break;
+            case (salary > 500):
+                salary *= 0.93;
+                break;
+            case (salary > 300):
+                salary *= 0.95;
+                break;
+            default:
+            salary *= 0.98;
+        }
+
+        result.innerHTML = `Last price = ${salary}₺`
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="number1">
+    <button onclick="salary()">Send</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function salary(){
+        const number1 = document.querySelector("#number1");
+        const result = document.querySelector("#result");
+
+        let salary = number1.value;
+
+        if(salary>500){
+            salary *= 0.9;
+        }
+
+        result.innerHTML = salary;
+        
+        }
+
+    </script>
+
+</body>
+</html>
