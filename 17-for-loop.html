@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foor-loop</title>
+</head>
+<body>
+    
+
+    <input type="number" id="txtDiscountRate">
+    <button onclick="setPrices()">Set Prices</button>
+
+    <ul id="produtcs">
+        <li>SDD Disk <span>120</span>$</li>
+        <li>Ekran Karti <span>500</span>$</li>
+        <li>İslemci <span>400</span>$</li>
+    </ul>
+
+    <script>
+        function setPrices(){
+            const txtDiscountRate = document.querySelector("#txtDiscountRate");
+            const discountRate = txtDiscountRate.value;
+
+            const productPrices = document.querySelectorAll("#produtcs li span"); 
+
+            for(let i=0; i<=productPrices.length; i++){
+                const price = productPrices[i].innerText;
+                const newPrice = price - (price * discountRate) / 100;
+                productPrices[i].innerText = newPrice;
+            }
+
+        }
+        
+
+
+
+
+    </script>
+
+</body>
+</html>

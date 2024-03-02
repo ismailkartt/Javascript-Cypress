@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While-Loop</title>
+</head>
+<body>
+    
+    <input type="number" id="factorial">
+    <button onclick="factorial()">Factorial</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function factorial(){
+            const txtFactorial = document.querySelector("#factorial"); 
+            let factorial = txtFactorial.value;
+            const result = document.querySelector("#result");
+
+            let f=1;
+            while(factorial > 1){
+                f = f * factorial;
+                factorial--;
+            }
+            result.innerText = f;
+        }   
+        
+
+    </script>
+</body>
+</html>
