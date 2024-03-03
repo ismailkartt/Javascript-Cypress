@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Filter</title>
+	</head>
+	<body>
+		<input type="search" id="txtSearch" />
+
+		<ul id="listProduct"></ul>
+
+		<script>
+			const txtSearch = document.querySelector("#txtSearch");
+			const listProduct = document.querySelector("#listProduct");
+
+			const products = [
+				{ id: 1, name: "laptop", price: 20000 },
+				{ id: 2, name: "mobile", price: 10000 },
+				{ id: 3, name: "watch", price: 5000 },
+				{ id: 4, name: "headphone", price: 1000 },
+				{ id: 5, name: "mouse", price: 500 },
+				{ id: 6, name: "keyboard", price: 300 },
+				{ id: 7, name: "mousepad", price: 150 },
+				{ id: 8, name: "headset", price: 150 },
+				{ id: 9, name: "earphone", price: 150 },
+				{ id: 10, name: "speaker", price: 150 },
+			];
+
+			txtSearch.addEventListener("input", (e) => {
+				//TExtbox a girilen değeri al
+				const text = e.target.value;
+
+				// input un içindeki değeri filterArray fınksiyonuna gönder
+				// filtrelenmiş dizi arr içine gleir.
+				const arr = filterArray(text); 
+
+				// filrelenmiş dizi ile ul elementinin içini doldur
+				fillList(arr);
+			});
+
+			// Dışardan aldığı metni products isimli dizide ürün isimlerinde arayıp, filtreleme yapar
+			const filterArray = (text) => {
+				// filter komutu dizi içinde iteration yapar, aynı zamanda tanımlanan mantıksal ifadenin sonucuna göre dizi elemanlarını yeni diziye atar ya da atmaz. Eğer true dönerse elemen yeni diziye atılır, false dönerse atılmaz.
+				const newProducts = products.filter((item) =>
+					item.name.includes(text)
+				);
+				// products dizisi filtrelenir ve çağrıldığı yere filtrelenmiş dizi döndürülür.
+				return newProducts;
+			};
+
+			const fillList = (arr) => {
+				let strProducts = "";
+
+				arr.forEach((item) => {
+					strProducts += `<li>${item.name}</li>`;
+				});
+				listProduct.innerHTML = strProducts;
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>REST OPERATORU</title>
+    </head>
+    <body>
+        <h1>REST OPERATORU 2</h1>
+        <script>
+            // Ogrencinin adi ve soyadini ilk iki parametre olarak alip geri kalan parametreleri ise notlar adi altinda toplayan ve geriye kisinin notlarini donen bir fonksiyon yaziniz.
+
+            const ortalama = (isim, soyisim, ...notlar) => {
+                // eger reduce metoduna bir baslangic degeri vermezsek accumulator dizinin ilk elemanini deger olarak alir.
+
+                const ort = notlar.reduce((acc, curr) => acc + curr, 0);
+                return `${isim} ${soyisim} ortalamasi: ${ort / notlar.length}`;
+            };
+
+            console.log(
+                ortalama(
+                    "Ahmet",
+                    "Yilmaz",
+                    100,
+                    90,
+                    80,
+                    70,
+                    60,
+                    50,
+                    40,
+                    30,
+                    20,
+                    10
+                )
+            );
+        </script>
+    </body>
+</html>

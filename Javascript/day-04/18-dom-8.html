@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <style>
+      .dark {
+        background-color: black;
+        color: rgb(233, 233, 233);
+      }
+
+      .mode {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: chartreuse;
+        box-shadow: 0 3px 5px rgb(52, 52, 52);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="">
+    <h1>Dark Mode Switcher</h1>
+
+    <p>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima
+        tempore aperiam voluptatibus ipsam, ipsum deserunt corrupti, maiores
+        tempora earum est, eaque temporibus at recusandae quisquam? Inventore et
+        dicta molestias!</span
+      ><span
+        >Aut aliquid, soluta maiores reprehenderit voluptates veniam minus,
+        alias repellat facere commodi nihil, at exercitationem quibusdam rem ut
+        perferendis ea ducimus quod quis. Magnam ullam, dignissimos ad debitis
+        necessitatibus similique.</span
+      ><span
+        >Quia tempora repellendus molestias at voluptatem nisi aut rerum modi
+        eos quaerat tempore assumenda itaque, laudantium perferendis, quod animi
+        earum perspiciatis rem odit corporis iusto quae! Illum voluptas
+        doloremque fugiat.</span
+      ><span
+        >Velit autem libero ab ad ea sequi fugit error odio iure impedit
+        eveniet, quisquam dolores est distinctio ipsa! Recusandae qui sit
+        laborum a distinctio minus nulla dignissimos dolor quia dolores!</span
+      ><span
+        >Rerum, eos beatae tenetur, modi dolorem possimus aut saepe quo
+        inventore odio vitae officia quod consequatur dignissimos, laborum
+        voluptas ab. Molestias assumenda magni dolores reprehenderit deserunt
+        quam, laboriosam dolor placeat.</span
+      >
+    </p>
+
+    <p>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima
+        tempore aperiam voluptatibus ipsam, ipsum deserunt corrupti, maiores
+        tempora earum est, eaque temporibus at recusandae quisquam? Inventore et
+        dicta molestias!</span
+      ><span
+        >Aut aliquid, soluta maiores reprehenderit voluptates veniam minus,
+        alias repellat facere commodi nihil, at exercitationem quibusdam rem ut
+        perferendis ea ducimus quod quis. Magnam ullam, dignissimos ad debitis
+        necessitatibus similique.</span
+      ><span
+        >Quia tempora repellendus molestias at voluptatem nisi aut rerum modi
+        eos quaerat tempore assumenda itaque, laudantium perferendis, quod animi
+        earum perspiciatis rem odit corporis iusto quae! Illum voluptas
+        doloremque fugiat.</span
+      ><span
+        >Velit autem libero ab ad ea sequi fugit error odio iure impedit
+        eveniet, quisquam dolores est distinctio ipsa! Recusandae qui sit
+        laborum a distinctio minus nulla dignissimos dolor quia dolores!</span
+      ><span
+        >Rerum, eos beatae tenetur, modi dolorem possimus aut saepe quo
+        inventore odio vitae officia quod consequatur dignissimos, laborum
+        voluptas ab. Molestias assumenda magni dolores reprehenderit deserunt
+        quam, laboriosam dolor placeat.</span
+      >
+    </p>
+
+    <p>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima
+        tempore aperiam voluptatibus ipsam, ipsum deserunt corrupti, maiores
+        tempora earum est, eaque temporibus at recusandae quisquam? Inventore et
+        dicta molestias!</span
+      ><span
+        >Aut aliquid, soluta maiores reprehenderit voluptates veniam minus,
+        alias repellat facere commodi nihil, at exercitationem quibusdam rem ut
+        perferendis ea ducimus quod quis. Magnam ullam, dignissimos ad debitis
+        necessitatibus similique.</span
+      ><span
+        >Quia tempora repellendus molestias at voluptatem nisi aut rerum modi
+        eos quaerat tempore assumenda itaque, laudantium perferendis, quod animi
+        earum perspiciatis rem odit corporis iusto quae! Illum voluptas
+        doloremque fugiat.</span
+      ><span
+        >Velit autem libero ab ad ea sequi fugit error odio iure impedit
+        eveniet, quisquam dolores est distinctio ipsa! Recusandae qui sit
+        laborum a distinctio minus nulla dignissimos dolor quia dolores!</span
+      ><span
+        >Rerum, eos beatae tenetur, modi dolorem possimus aut saepe quo
+        inventore odio vitae officia quod consequatur dignissimos, laborum
+        voluptas ab. Molestias assumenda magni dolores reprehenderit deserunt
+        quam, laboriosam dolor placeat.</span
+      >
+    </p>
+
+    <p>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima
+        tempore aperiam voluptatibus ipsam, ipsum deserunt corrupti, maiores
+        tempora earum est, eaque temporibus at recusandae quisquam? Inventore et
+        dicta molestias!</span
+      ><span
+        >Aut aliquid, soluta maiores reprehenderit voluptates veniam minus,
+        alias repellat facere commodi nihil, at exercitationem quibusdam rem ut
+        perferendis ea ducimus quod quis. Magnam ullam, dignissimos ad debitis
+        necessitatibus similique.</span
+      ><span
+        >Quia tempora repellendus molestias at voluptatem nisi aut rerum modi
+        eos quaerat tempore assumenda itaque, laudantium perferendis, quod animi
+        earum perspiciatis rem odit corporis iusto quae! Illum voluptas
+        doloremque fugiat.</span
+      ><span
+        >Velit autem libero ab ad ea sequi fugit error odio iure impedit
+        eveniet, quisquam dolores est distinctio ipsa! Recusandae qui sit
+        laborum a distinctio minus nulla dignissimos dolor quia dolores!</span
+      ><span
+        >Rerum, eos beatae tenetur, modi dolorem possimus aut saepe quo
+        inventore odio vitae officia quod consequatur dignissimos, laborum
+        voluptas ab. Molestias assumenda magni dolores reprehenderit deserunt
+        quam, laboriosam dolor placeat.</span
+      >
+    </p>
+
+    <p>
+      <span
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam minima
+        tempore aperiam voluptatibus ipsam, ipsum deserunt corrupti, maiores
+        tempora earum est, eaque temporibus at recusandae quisquam? Inventore et
+        dicta molestias!</span
+      ><span
+        >Aut aliquid, soluta maiores reprehenderit voluptates veniam minus,
+        alias repellat facere commodi nihil, at exercitationem quibusdam rem ut
+        perferendis ea ducimus quod quis. Magnam ullam, dignissimos ad debitis
+        necessitatibus similique.</span
+      ><span
+        >Quia tempora repellendus molestias at voluptatem nisi aut rerum modi
+        eos quaerat tempore assumenda itaque, laudantium perferendis, quod animi
+        earum perspiciatis rem odit corporis iusto quae! Illum voluptas
+        doloremque fugiat.</span
+      ><span
+        >Velit autem libero ab ad ea sequi fugit error odio iure impedit
+        eveniet, quisquam dolores est distinctio ipsa! Recusandae qui sit
+        laborum a distinctio minus nulla dignissimos dolor quia dolores!</span
+      ><span
+        >Rerum, eos beatae tenetur, modi dolorem possimus aut saepe quo
+        inventore odio vitae officia quod consequatur dignissimos, laborum
+        voluptas ab. Molestias assumenda magni dolores reprehenderit deserunt
+        quam, laboriosam dolor placeat.</span
+      >
+    </p>
+
+    <button class="mode" onclick="setMode()">Mode</button>
+
+    <script>
+      function setMode() {
+        const body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+    </script>
+  </body>
+</html>

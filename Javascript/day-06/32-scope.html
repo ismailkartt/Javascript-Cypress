@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let globalScopeVariable = 21;
+        let hybridVariable = 100;
+
+        const myFunction = () => {
+            let functionScopeVariable = 33;
+            let hybridVariable = 200;
+
+            if(functionScopeVariable>0){
+                let blockScopeVariable = 50;
+                let hybridVariable = 300;
+
+                blockScopeVariable += globalScopeVariable;
+                console.log(blockScopeVariable);
+                console.log(`hybridVariable in block scope: ${hybridVariable}`)
+            }
+            // Bu satır hata verir.
+            // console.log(blockScopeVariable);
+
+            console.log(`hybridVariable in function scope: ${hybridVariable}`)
+
+        }
+
+
+        myFunction();
+
+        console.log(`hybridVariable in global scope: ${hybridVariable}`)
+    </script>
+</body>
+</html>

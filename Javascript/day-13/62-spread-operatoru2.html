@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SPREAD OPERATORU 2</title>
+    </head>
+    <body>
+        <h1>SPREAD OPERATORU 2</h1>
+        <script>
+            const ortakAracBilgisi = {
+                renk: "kirmizi",
+                motor: "1.6",
+                beygirGucu: "110",
+                vitesturu: "manuel",
+            };
+
+            const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            const myNewArray = [100, 150, ...myArray];
+
+            console.log(myArray);
+            console.log(myNewArray);
+
+            const bmw = {
+                ...ortakAracBilgisi,
+                motor: "2.0",
+            };
+
+            console.log(bmw);
+
+            console.log(ortakAracBilgisi);
+        </script>
+    </body>
+</html>

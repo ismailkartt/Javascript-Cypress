@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+
+    <button onclick="calculate()">Click</button>
+    
+    <script>
+
+        function sum1(a,b){
+            return a+b;
+        }
+
+        // Arrow function da fonksiyon içinde tek satır varsa
+        // süslü parantez ve return kullanmaya gerek olmaz
+        const sum2 = (a,b) => a+b;
+
+        // Birden fazla satır olursa, süslü parantez ve return kullanılır.
+        const multiply = (a,b) => {
+            console.log(a);
+            return a*b;
+        }
+
+        const calculate = () => {
+            const result = sum2(1245,23);
+            console.log(result)
+        }
+
+       
+
+    </script>
+
+</body>
+</html>

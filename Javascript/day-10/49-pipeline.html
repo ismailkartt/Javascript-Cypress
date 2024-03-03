@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pipeline</title>
+	</head>
+	<body>
+		<script>
+			const products = [
+				{ id: 1, name: "laptop", price: 20000 },
+				{ id: 2, name: "mobile", price: 10000 },
+				{ id: 3, name: "watch", price: 5000 },
+				{ id: 4, name: "headphone", price: 1000 },
+				{ id: 5, name: "mouse", price: 500 },
+				{ id: 6, name: "keyboard", price: 300 },
+				{ id: 7, name: "mousepad", price: 150 },
+				{ id: 8, name: "headset", price: 450 },
+				{ id: 9, name: "earphone", price: 65 },
+				{ id: 10, name: "speaker", price: 750 },
+			];
+
+			// Fiyatı 500 den küçük olan ürünlerin fiyatına %30 zam yapıp bunları console da gösteren program.
+			// map, filter, forEach
+
+			// filter da yeni dizi de eleman sayısı orginal diziden farklı olabilir ama elaman yapısı hep aynıdır.
+			products.filter((item) => item.price < 500)
+            .map( (item) => item.price * 1.30)
+            .forEach( (item)=> console.log(item) )
+
+            // iteration komutlarının peşpeşe kullanılmasına PIPELINE denir.
+
+     
+
+
+		</script>
+	</body>
+</html>

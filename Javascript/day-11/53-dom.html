@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>INNERTEXT & INNERHTML & TEXTCONTENT</title>
+    </head>
+    <body>
+        <h1>INNERTEXT & INNERHTML & TEXTCONTENT</h1>
+        <div class="container">
+            <p id="p1">Hello World</p>
+            <p>
+                <span style="display: none">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Sequi, earum?
+                </span>
+            </p>
+        </div>
+
+        <script>
+            // DOM ELEMENTS
+            const container = document.querySelector(".container");
+            const p1 = document.getElementById("p1");
+
+            console.log("innerText: ", container.innerText);
+
+            console.log("innerHTML: ", container.innerHTML);
+
+            console.log("textContent: ", container.textContent);
+
+            // innerText
+            p1.innerText = "<span>Hello World 2</span>";
+
+            // innerHTML
+            p1.innerHTML = "<span style='color: red'>Hello World 2</span>";
+
+            // textContent
+            p1.textContent = "<span>Hello World 2</span>";
+        </script>
+    </body>
+</html>

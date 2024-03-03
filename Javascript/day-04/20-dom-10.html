@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <input type="number" id="txtPrice" />
+    <button onclick="getPrice()">Get Price</button>
+    <p id="lblResult"></p>
+
+    <script>
+      function getPrice() {
+        const txtPrice = document.querySelector("#txtPrice");
+        const lblResult = document.querySelector("#lblResult");
+
+        let price = txtPrice.value;
+
+        switch (true) {
+          case price > 1500:
+            price *= 0.85;
+            break;
+          case price > 1000:
+            price *= 0.87;
+            break;
+          case price > 700:
+            price *= 0.9;
+            break;
+          case price > 500:
+            price *= 0.93;
+            break;
+          case price > 300:
+            price *= 0.95;
+            break;
+          default:
+            price *= 0.98;
+        }
+
+        lblResult.innerHTML = `Last price = ${price}₺`;
+      }
+    </script>
+  </body>
+</html>

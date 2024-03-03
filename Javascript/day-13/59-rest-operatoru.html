@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>REST OPERATORU</title>
+    </head>
+    <body>
+        <h1>REST OPERATORU</h1>
+        <script>
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            // rest operatoru arguman olarak gonderilen degerleri bir dizide toplamamizi saglar.
+            const topla = (a, b, c, ...geriKalanSayilar) => {
+                const carpim = a * b * c;
+                // reduce ifadesi icerisine iki ifade alir. Birinci ifade callback fonksiyondur. Ikinci ifade ise baslangic degeridir.
+                // callback fonksiyon icerisine iki adet parametre alir. Birinci parametre accumulator, ikinci parametre ise current value'dir.
+                // Baslangicta accumulator baslangic degerine esitlenir. Current value ise dizinin ilk elemanina esitlenir.
+                const toplam = geriKalanSayilar.reduce((acc, curr) => {
+                    return acc + curr;
+                }, carpim);
+                return toplam;
+            };
+
+            const sonuc = topla(...arr);
+            console.log(sonuc);
+        </script>
+    </body>
+</html>

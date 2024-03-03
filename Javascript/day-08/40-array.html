@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <button id="btnGetPrices">Get Prices</button>
+
+    <h4 id="lblResult"></h4>
+
+    <script>
+      const btnGetPrices = document.querySelector("#btnGetPrices");
+      const lblResult = document.querySelector("#lblResult");
+
+      const prices = [120, 500, 250, 35, 10, 85, 375];
+
+      btnGetPrices.addEventListener("click", () => {
+        const newPrices = getPrices(prices, 20);
+
+        lblResult.innerHTML = newPrices;
+      });
+
+      const getPrices = (arr, rate) => {
+        if (!arr || !Array.isArray(arr) || arr.length <= 0 || !rate) return;
+
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = arr[i] + (arr[i] * rate) / 100;
+          //         120  +  120   *  20  / 100
+          // arr[i] *= 1 + rate / 100;
+        }
+
+        return arr;
+      };
+    </script>
+  </body>
+</html>

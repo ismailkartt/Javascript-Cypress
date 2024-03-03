@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Objects</title>
+	</head>
+	<body>
+		<div>
+			<select id="listCar" size="5" style="width: 300px">
+                
+            </select>
+		</div>
+
+		<h3 id="lblValue"></h3>
+
+		<script>
+            const listCar = document.querySelector("#listCar");
+            const lblValue = document.querySelector("#lblValue");
+
+			const car = {
+				brand: "Audi",
+				model: "A4",
+				color: "red",
+				year: 2023,
+				doors: 5,
+				seats: 5,
+				engine: "V8",
+				transmission: "Automatic",
+				price: 50000,
+			};
+
+			const fillList = () => {
+                // Object in keylerini dizi hlaine getir
+				const carKeys = Object.keys(car);
+				let options = "";
+
+                // Dizideki elemanları tek tek gez
+				for (let i = 0; i < carKeys.length; i++) {
+					//console.log(carKeys[i])
+                    // Her bir eleman için bir option oluştur ve öncekilere ekle
+					options += `<option>${carKeys[i]}</option>`;
+				}
+				console.log(options);
+
+                // select içine options ı yerleştir.
+				listCar.innerHTML = options;
+			};
+
+
+            listCar.addEventListener("change", (e)=>{
+                // aktif seçilmiş olan elemanın değerini al
+                const selectedKey = e.target.value;
+
+                // bu değeri label a yerleştir
+                lblValue.innerHTML = car[selectedKey];
+            })
+
+
+
+			fillList();
+		</script>
+	</body>
+</html>

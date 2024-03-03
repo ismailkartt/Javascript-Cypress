@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CALLBACK 1</title>
+    </head>
+    <body>
+        <h1>CALLBACK 1</h1>
+        <script>
+            const siparisVer = (callback) => {
+                console.log("Siparisiniz alindi");
+                console.log("Siparisiniz hazirlaniyor");
+                setTimeout(callback, 3000);
+            };
+
+            const siparisOnaylandi = () => {
+                console.log("Siparisiniz hazir");
+            };
+
+            siparisVer(siparisOnaylandi);
+        </script>
+    </body>
+</html>

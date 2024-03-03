@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DESTRUCTURE</title>
+    </head>
+    <body>
+        <h1>DESTRUCTURE</h1>
+        <script>
+            // OBJELERDE DESTRUCTURE
+            const kullaniciInputu = "age";
+
+            const ogrenci = {
+                firstName: "John",
+                lastName: "Doe",
+                age: 18,
+                department: "Computer Science",
+                ulke: {
+                    sehir: "Istanbul",
+                    sokak: "Bagdat Caddesi",
+                },
+            };
+
+            // obje icerisindeki bir elemana dinamik olarak erismek istediginizde asagidaki ifade kullanilir:
+            ogrenci[kullaniciInputu];
+
+            const {
+                age,
+                department,
+                firstName,
+                ulke: { sehir },
+            } = ogrenci;
+
+            console.log(age);
+            console.log(department);
+            console.log(firstName);
+            console.log(ogrenci);
+            console.log(sehir);
+
+            // ARRAYLERDE DESTRUCTURE
+            const arr = ["John", "Doe", 18, "Computer Science"];
+
+            const [a, b, c, d] = arr;
+            console.log(a);
+
+            const merhabaDe = ({ firstName, lastName }) => {
+                console.log(`Merhaba, ${firstName} ${lastName}`);
+            };
+
+            merhabaDe(ogrenci);
+        </script>
+    </body>
+</html>

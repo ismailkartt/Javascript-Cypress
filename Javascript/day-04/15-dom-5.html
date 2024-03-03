@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+
+</head>
+<body>
+
+    <input type="number" id="txtNum1">
+    <input type="number" id="txtNum2">
+    <button onclick="sum()">Sum</button>
+
+    <p id="lblResult"></p>
+
+    <script>
+        function sum(){
+            const txtNum1 = document.querySelector("#txtNum1");
+            const txtNum2 = document.querySelector("#txtNum2");
+            const lblResult = document.querySelector("#lblResult");
+
+            const num1 = Number(txtNum1.value);
+            const num2 = Number(txtNum2.value);
+
+            const result = num1 + num2;
+            lblResult.innerHTML = "Sonuç:" + result;
+
+
+            
+
+        }
+
+    </script>
+    
+</body>
+</html>

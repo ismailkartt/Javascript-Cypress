@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PROMISE</title>
+    </head>
+    <body>
+        <h1>PROMISE</h1>
+        <script>
+            // 1 - bir fonksiyon olusturulur
+            // 2 - geriye Promise yapisi return edilmeli
+            // 3 - Promise yapisi new Promise() ile olusturulur
+            // 4 - Promise yapisi icerisinde bir callback fonksiyonu alir
+            // 5 - callback fonksiyonu icerisinde resolve ve reject parametreleri alir
+            // 6 - mantiksal ifadeler resolve ve reject sonuclarina ulasmadan yazilir.
+            // 7 - eger uygun sartlar saglanirsa resolve() fonksiyonu calistirilir.
+            // 8 - resolve fonksiyonunun icerisine istenilen deger yazilir.
+            // 9 - hamburgerimNerede() fonksiyonu calistirilir.
+            // 10 - hamburgerimNerede() fonksiyonuna then ve catch yapilari eklenir.
+            // 11 - then ve catch yapilarinin icerisine callback fonksiyonlari yazilir.
+            // 12 - then yapisinda callback fonksiyonu parametreden resolve'daki degeri alir.
+            // 13 - catch yapisinda callback fonksiyonu parametreden reject'daki degeri alir.
+
+            const hamburgerimNerede = () => {
+                return new Promise((resolve, reject) => {
+                    const hamburgerinPismeOrani = 5;
+                    if (hamburgerinPismeOrani > 5) {
+                        setTimeout(() => {
+                            resolve(hamburgerinPismeOrani);
+                        }, 3000);
+                    } else {
+                        reject("Hamburgerin pisme orani yetersizdir.");
+                    }
+                });
+            };
+
+            hamburgerimNerede()
+                .then((hamburgerimOlmus) => {
+                    console.log(hamburgerimOlmus);
+                })
+                .catch((hamburgerimYanmis) => {
+                    console.log(hamburgerimYanmis);
+                });
+        </script>
+    </body>
+</html>

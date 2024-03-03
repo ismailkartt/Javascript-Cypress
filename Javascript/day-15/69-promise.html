@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                text-align: center;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            #result {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button id="btnConfirm">Confirm Action</button>
+            <div id="result"></div>
+        </div>
+
+        <script>
+            // DOM ELEMENTS
+            const btnConfirm = document.querySelector("#btnConfirm");
+            const result = document.querySelector("#result");
+            // TODO 1: Kullanicidan onay alinir
+            // EVENT LISTENERS
+            btnConfirm.addEventListener("click", async () => {
+                // 1. YONTEM, THEN VE CATCH BLOKLARIYLA
+                // asyncConfirm("Bu kullaniciyi silmek istediginize emin misiniz?")
+                //     .then((data) => {
+                //         result.innerText = data;
+                //     })
+                //     .catch((error) => {
+                //         result.innerText = error;
+                //     });
+
+                // 2. YONTEM, ASYNC VE AWAIT KULLANARAK TRY CATCH BLOKLARIYLA
+                try {
+                    const data = await asyncConfirm(
+                        "Bu kullaniciyi silmek istediginize emin misiniz?"
+                    );
+                    result.innerText = data;
+                } catch (error) {
+                    result.innerText = error;
+                }
+            });
+
+            // FUNCTIONS
+            // arrow function => const myFunc = async () => {};
+            // traditional function => async function myFunc() {};
+
+            // PROMISE
+            function asyncConfirm(message) {
+                return new Promise((resolve, reject) => {
+                    // kullanicidan onay al
+                    const response = confirm(message);
+
+                    if (response) {
+                        // verileri silme islemi yapilir
+                        var myData = [
+                            "Veri 1",
+                            "Veri 2",
+                            "Veri 3",
+                            "Veri 4",
+                            "Veri 5",
+                        ];
+                        resolve("Veriler basarili bir sekilde silindi");
+                    } else {
+                        reject("Veriler silinemedi");
+                    }
+                });
+            }
+
+            // const abc = "abc"; // NaN
+            // const num1 = 5;
+            // const def = "aef"; // NaN
+            // console.log(abc > num1);
+            // console.log(num1 > abc);
+            // console.log(abc > def);
+            // console.log(def > abc);
+
+            // var = 15; var2 = 20
+            // Boolean(var1) => true, false
+            // Boolean(var2) => true, false
+            // var1 && var2 => var2 => console.log(var2) => 20
+        </script>
+    </body>
+</html>
