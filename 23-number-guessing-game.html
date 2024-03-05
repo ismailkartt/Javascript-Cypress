@@ -19,7 +19,7 @@
     <button id="btnStart" onclick="start()">Start</button>
     
     <div id="gamePanel" class="hidden">
-        <input type="number" id="txtNum" placeholder="Type a number between 1-100">
+        <input type="number" id="txtNum" placeholder="Type a number between 1-100" autocomplete="off">
         <button onclick="predict()">Predict</button>
     </div>
 
@@ -35,7 +35,7 @@
             btnStart.classList.add("hidden");
             gamePanel.classList.remove("hidden");
             lblResult.innerHTML = "";
-            randomNumber = generateRandomNumber();
+            randomNumber = generateRandomNumber(1,100);
             console.log(randomNumber);
          }
 
@@ -48,9 +48,11 @@
                 lblResult.innerHTML = "Type a number between 1-100";
                 return;
             }
-
+            
             if(predictedNumber == randomNumber){
                 lblResult.innerHTML = "You won!";
+                btnStart.classList.remove("hidden");
+                gamePanel.classList.add("hidden");
             }else if(predictedNumber > randomNumber){
                 lblResult.innerHTML = "Decrease the number";
             }else{
@@ -62,7 +64,7 @@
 
         }
 
-         const generateRandomNumber = (max,min) => Math.floor(Math.random() * 100 +1);
+         const generateRandomNumber = (max,min) => Math.floor(Math.random() * (max - min + 1) + min);
 
     </script>
 
