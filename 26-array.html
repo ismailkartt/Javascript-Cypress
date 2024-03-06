@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+
+const cars = ["Mercedes", "Audi", "TOGG", "BMW", "Tesla", "Ferrari"];
+
+console.log(cars);
+
+console.log(cars[3]); // 4.sıradaki elemanı verir (index:3)
+
+console.log(cars.length); // dizi uzunluğunu verir.
+
+console.log(cars[0]); // ilk elemanı verir
+
+console.log(cars[cars.length - 1]); // son elemanı verir
+
+cars[3] = "Lamborgini";
+
+console.log(cars);
+
+// cars = "Hello"
+// cars const olarak tanımlandığı için ve değişkenin değeri tamamıyla değiştirilmeye çalışıldığı için izin vermez.
+
+console.log(cars[0]);
+console.log(cars[1]);
+console.log(cars[2]);
+console.log(cars[3]);
+console.log(cars[4]);
+console.log(cars[5]);
+
+console.log("----------------");
+
+// Iteration
+for (let i = 0; i < cars.length; i++) {
+  console.log(cars[i]);
+}
+
+
+    
+
+    </script>
+
+</body>
+</html>
