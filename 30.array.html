@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+
+    <style>
+        .btnContainer {
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<input type="text" id="txt">
+<button id="add">Add</button><br>
+<div class="btnContainer">
+    <button id="sort">Sort</button>
+    <button id="reverse">Reverse</button>
+    <button id="removeLast">Remove Last</button>
+    <button id="removeFirst">Remove First</button>
+    <button id="removeAll">Remove All</button>
+    <button id="mix">Mix</button>
+</div>
+
+<ul id="city">
+    <li>Ankara</li>
+    <li>Istanbul</li>
+    <li>Izmir</li>
+</ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const addBtn = document.getElementById("add");
+    const txtInput = document.getElementById("txt");
+    const ulList = document.getElementById("city");
+    const btnContainer = document.querySelector(".btnContainer");
+
+    addBtn.addEventListener("click", function() {
+        const newCity = txtInput.value.trim();
+        if (newCity !== "") {
+            const li = document.createElement("li");
+            li.textContent = newCity;
+            ulList.appendChild(li);
+            txtInput.value = "";
+        }
+    });
+
+    btnContainer.addEventListener("click", function(event) {
+        const targetBtn = event.target;
+        if (targetBtn.tagName === "BUTTON") {
+            const action = targetBtn.textContent.toLowerCase();
+            switch (action) {
+                case "sort":
+                    sortList();
+                    break;
+                case "reverse":
+                    reverseList();
+                    break;
+                case "remove last":
+                    removeLast();
+                    break;
+                case "remove first":
+                    removeFirst();
+                    break;
+                case "remove all":
+                    removeAll();
+                    break;
+                case "mix":
+                    mixList();
+                    break;
+            }
+        }
+    });
+
+    function sortList() {
+        const items = Array.from(ulList.children);
+        items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+        ulList.innerHTML = "";
+        items.forEach(item => ulList.appendChild(item));
+    }
+
+    function reverseList() {
+        const items = Array.from(ulList.children);
+        items.reverse();
+        ulList.innerHTML = "";
+        items.forEach(item => ulList.appendChild(item));
+    }
+
+    function removeLast() {
+        const lastItem = ulList.lastElementChild;
+        if (lastItem) {
+            ulList.removeChild(lastItem);
+        }
+    }
+
+    function removeFirst() {
+        const firstItem = ulList.firstElementChild;
+        if (firstItem) {
+            ulList.removeChild(firstItem);
+        }
+    }
+
+    function removeAll() {
+        ulList.innerHTML = "";
+    }
+
+    function mixList() {
+        const items = Array.from(ulList.children);
+        items.sort(() => Math.random() - 0.5);
+        ulList.innerHTML = "";
+        items.forEach(item => ulList.appendChild(item));
+    }
+});
+
+</script>
+
+</body>
+</html>

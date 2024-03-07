@@ -16,7 +16,7 @@
 </head>
 <body>
     
-    <input type="text">
+    <input type="text" id="txt">
     <button id="add">Add</button></br>
     <div class="btnContainer">
     <button>Sort</button>
@@ -27,14 +27,35 @@
     <button>Mix</button>
     </div>
 
-    <ul>
+    <ul id="city">
         <li>Ankara</li>
         <li>Istanbul</li>
         <li>Izmir</li>
     </ul>
 
     <script>
+        const add = document.querySelector("#add");
+        const city = document.querySelector("#city");
+        const txt = document.querySelector("#txt");
+        const cities = ["Ankara","Istanbul","Izmir"];
+  
 
+        add.addEventListener("click", () => {
+        const newCity = txt.value.trim(); 
+        if (newCity !== "") {
+            cities.push(newCity);
+            renderCities();
+        }
+    });
+
+    function renderCities() {
+        cityList.innerHTML = ""; 
+        cities.forEach(city => {
+            const li = document.createElement("li");
+            li.textContent = city;
+            cityList.appendChild(li);
+        });
+    }
 
 
     </script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+
+    <style>
+        .btnContainer {
+            padding: 10px 0;
+        }
+    </style>
+
+</head>
+<body>
+
+<input type="text" id="txt">
+<button id="add">Add</button><br>
+<div class="btnContainer">
+    <button id="sort">Sort</button>
+    <button id="reverse">Reverse</button>
+    <button id="removeLast">Remove Last</button>
+    <button id="removeFirst">Remove First</button>
+    <button id="removeAll">Remove All</button>
+    <button id="mix">Mix</button>
+</div>
+
+<ul id="city">
+    <li>Ankara</li>
+    <li>Istanbul</li>
+    <li>Izmir</li>
+</ul>
+
+<script>
+    const add = document.querySelector("#add");
+    const cityList = document.querySelector("#city");
+    const txt = document.querySelector("#txt");
+    const cities = ["Ankara", "Istanbul", "Izmir"];
+    
+    add.addEventListener("click", () => {
+        const newCity = txt.value.trim();
+        if (newCity !== "") {
+            cities.push(newCity);
+            renderCities();
+        }
+    });
+
+    function renderCities() {
+        cityList.innerHTML = "";
+        cities.forEach(city => {
+            const li = document.createElement("li");
+            li.textContent = city;
+            cityList.appendChild(li);
+        });
+    }
+
+    // Sort button functionality
+    document.querySelector("#sort").addEventListener("click", () => {
+        cities.sort();
+        renderCities();
+    });
+
+    // Reverse button functionality
+    document.querySelector("#reverse").addEventListener("click", () => {
+        cities.reverse();
+        renderCities();
+    });
+
+    // Remove Last button functionality
+    document.querySelector("#removeLast").addEventListener("click", () => {
+        cities.pop();
+        renderCities();
+    });
+
+    // Remove First button functionality
+    document.querySelector("#removeFirst").addEventListener("click", () => {
+        cities.shift();
+        renderCities();
+    });
+
+    // Remove All button functionality
+    document.querySelector("#removeAll").addEventListener("click", () => {
+        cities.length = 0; // Empty the array
+        renderCities();
+    });
+
+    // Mix button functionality
+    document.querySelector("#mix").addEventListener("click", () => {
+        for (let i = cities.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [cities[i], cities[j]] = [cities[j], cities[i]]; // Swap elements
+        }
+        renderCities();
+    });
+</script>
+
+</body>
+</html>
