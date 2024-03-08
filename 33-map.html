@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    
+
+    <ul>
+        <li id="tr"></li>
+        <li id="eur"></li>
+        <li id="usd"></li>
+    </ul>
+
+
+    <script>
+        const liTry = document.querySelector("#tr");
+        const liEur = document.querySelector("#eur");
+        const liUsd = document.querySelector("#usd");
+
+        const eur = 34.65;
+        const usd = 31.84;
+        const trMany = [1500,2500,3500,4500];
+
+        const eurPriceList = trMany.map((item) => (item / eur).toFixed(2));
+        const usdPriceList = trMany.map((item) => (item / usd).toFixed(2));
+
+        liTry.innerHTML = trMany.join(" - ");
+        liEur.innerHTML = eurPriceList.join(" - ");
+        liUsd.innerHTML = usdPriceList.join(" - ");
+
+    </script>
+
+</body>
+</html>

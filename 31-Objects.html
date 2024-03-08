@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+
+    <select size=5 id="select" style="width: 300px;">
+        
+    </select>
+
+    <h3 id="lblResult"></h3>
+    <script>
+
+        const select = document.querySelector("#select");
+        const lblResult = document.querySelector("#lblResult");
+
+        const car = {
+            brand: "Audi",
+            model: "A4",
+            color: "red",
+            year: 2023,
+            doors: 5,
+            seats: 5,
+            engine: "V8",
+            transmission: "Automatic",
+            price: 50000,
+        };
+
+        const fillSelect = () => {
+            const carKeys = Object.keys(car);
+            let options = "";
+
+            for (let i = 0; i < carKeys.length; i++) {
+                options += `<option>${carKeys[i]}</option>`;
+            }
+
+            select.innerHTML = options;
+        }
+
+        select.addEventListener("change",(e) => {
+            const selectedKey = e.target.value;
+            lblResult.innerHTML = car[selectedKey];
+        });
+
+        fillSelect();
+    </script>
+
+</body>
+
+</html>

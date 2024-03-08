@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Map</title>
+	</head>
+	<body>
+		<script>
+			// animals dizinin elemanlarını büyük harfe çevirip yeni bir dizide sakla
+
+			const animals = [
+				"fil",
+				"kuş",
+				"deve",
+				"fare",
+				"kaplan",
+				"ördek",
+				"balık",
+			];
+			let newAnimals = [];
+
+			animals.forEach((item, i) => {
+				newAnimals[i] = item.toUpperCase();
+			});
+
+			// map methodu forEach ten farklı olarak her dönüşte bir return ister
+			newAnimals = animals.map((item) => item.toUpperCase());
+			console.log(animals, newAnimals);
+		</script>
+	</body>
+</html>
