@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        .bg-red{
+            background-color: rgb(218, 122, 122);
+        }
+    </style>
+
+</head>
+<body>
+    
+    <table id="students">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Paun</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ali</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Veli</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>Cem</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Ayşe</td>
+                <td>96</td>
+            </tr>
+            <tr>
+                <td>Furkan</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <button id="btnScore">Score</button>
+
+    <script>
+        const btn = document.getElementById("btnScore"); 
+
+        btn.addEventListener("click",()=>{
+            const students = document.querySelectorAll("#students tbody tr td:last-child");
+            students.forEach((item)=>{
+                const score = item.innerHTML;
+                if(score<50){
+                    item.closest("tr").classList.add("bg-red");
+                }
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
