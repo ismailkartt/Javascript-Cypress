@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .clock-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .clock {
+            font-size: 3em;
+            letter-spacing: 0.1em;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #e7e7e7;
+            display: inline-block;
+            margin: 0;
+            color: #8e44ad;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock-container">
+        <div id="clock" class="clock"></div>
+    </div>
+
+    <script>
+        const clock = document.getElementById("clock");
+
+        const updateClock = () => {
+            const date = new Date();
+            const h = date.getHours().toString().padStart(2,"0");
+            const m = String(date.getMinutes()).padStart(2,"0");
+            const s = date.getSeconds().toString().padStart(2,"0");
+
+            clock.innerHTML = `${h}:${m}:${s}`;
+        }
+
+
+        updateClock();
+        setInterval(updateClock,1000);
+    </script>
+
+</body>
+
+</html>
