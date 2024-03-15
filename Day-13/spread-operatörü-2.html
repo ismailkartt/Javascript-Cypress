@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operatörü</title>
+</head>
+<body>
+    
+
+    <script>
+
+        const ortakAracBilgisi = {
+            renk : "kirmizi",
+            motor : "1.6",
+            beygirGucu : "110",
+            vitesturu : "manuel",
+        };
+
+        const bmw = ortakAracBilgisi;
+
+        bmw.motor = "2.0";
+
+        console.log(bmw);
+        console.log(ortakAracBilgisi);
+
+        const bmw2 = {
+            ...ortakAracBilgisi,
+            motor : "2.1",
+        };
+
+        console.log(bmw2);
+        console.log(ortakAracBilgisi);
+
+
+        const myArray = [1,2,3,4];
+        const newArray = [myArray,1,7,9];
+
+        console.log(myArray);
+        console.log(newArray);
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest operatörü</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        const ortalama = (isim, soyisim, ...notlar) => {
+
+            const ort = notlar.reduce((acc,cur)=> acc+cur ,0);
+            return `${isim} ${soyisim} ortalamasi: ${ort / notlar.length}`;    
+        }
+
+
+        console.log(ortalama("Ahmet","Yilmaz",100,90,80,70,60,50,40,30,20,10));
+
+        
+
+
+    </script>
+
+
+</body>
+</html>
