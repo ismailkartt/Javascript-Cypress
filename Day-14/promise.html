@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        const hambugerimNerede = () => {
+            return new Promise((resolve, reject) => {
+                const hambugerinPismeOrani = 5;
+
+                if (hambugerinPismeOrani > 5) {
+                    setTimeout(() => {
+                        resolve(hambugerinPismeOrani);
+                    }, 3000);
+                } else {
+                    reject("Hamburgerin pisme orani yetersizdir.");
+                }
+            });
+        };
+
+        hambugerimNerede()
+            .then((hambugerimOlmuş) => {
+                console.log(hambugerimOlmuş)
+             })
+            .catch((HamburgerimYandi) => { 
+                console.log(HamburgerimYandi);
+            });
+
+
+    </script>
+
+</body>
+
+</html>
