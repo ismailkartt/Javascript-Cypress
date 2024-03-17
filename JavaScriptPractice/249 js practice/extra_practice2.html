@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Practice - 20 Doğum Günü</title>
+<style>
+    /* @import url("https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap"); */
+    .col{
+        display: inline-block;
+        margin: 0px 75px;
+        
+    }
+    
+body {
+font-family: "Teko", sans-serif;
+background: url("/day07/img/birthday.png") center/cover no-repeat;
+height: 100vh;
+}
+h1 {
+text-align: center;
+text-transform: uppercase;
+color: rgb(6, 58, 103);
+margin-top: 10rem;
+}
+span {
+font-size: 1.7rem;
+color: aliceblue;
+}
+p {
+font-size: 5rem;
+color: aliceblue;
+}
+.sayac {
+    width: 1000px;
+    margin: 0 auto;
+background-color: rgb(184, 111, 15);
+border: 1px solid gray;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+</style>
+
+</head>
+<body>
+    <div> 
+    <h1 class="baslik">Dogum Gunu Geri Sayim</h1>
+    <div class="container sayac">
+    <div class="row">
+        <div class="col">
+        <p id="gun">0</p>
+        <span>gün</span>
+        </div>
+        <div class="col">
+        <p id="saat">0</p>
+        <span>saat</span>
+        </div>
+        <div class="col">
+        <p id="dakika">0</p>
+        <span>dakika</span>
+        </div>
+        <div class="col">
+        <p id="saniye">0</p>
+        <span>saniye</span>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="./js/extra_practice2.js"></script>
+</body>
+</html>
+

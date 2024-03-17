@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    body{
+        background-color: rgb(193, 206, 157);
+    }
+    .kayit{
+        border: 5px solid rgb(6, 6, 97);
+        border-radius: 15px;
+        padding: 15px;
+        width: 300px;
+        background-color: rgb(224, 195, 239);
+
+    }
+    button,input{
+        font-size: 15px;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: rgb(169, 229, 229);
+        padding: 5px 10px;
+
+    }
+    #mesaj{
+        color: rgb(6, 6, 98);
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .dnone{
+        display: none;
+    }
+</style>
+
+</head>
+<body>
+
+    <div class="kayit">
+        <form action="">
+            <div>
+            <label for="ad">Ad Soyad</label><br>
+            <input type="text" id="ad">
+        </div>
+        <div>
+            <label for="meslek">Meslek</label><br>
+            <input type="text" id="meslek">
+        </div>
+        <button type="button" onclick="gonder()">Gonder</button>
+        <button type="reset" onclick="sil()">Temizle</button>
+
+        </form><br>
+        <div id="mesaj">
+
+        </div>
+    </div>
+
+
+    <script src="./js/day02_practice1.js"></script>
+</body>
+</html>

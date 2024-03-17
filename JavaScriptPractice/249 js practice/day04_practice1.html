@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceans</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa; 
+            color: #01579b; 
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #b3e5fc; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        #ocean-fact {
+            height: 800px;
+            background-size: cover;      
+            background-position: center; 
+            background-repeat: no-repeat;
+            padding: 20px;               
+            color: white;                
+            text-shadow: 1px 1px 2px black; 
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #039be5; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0277bd; 
+        }
+
+        input,button{
+            padding:10px 25px;
+            border: none;
+            border-radius: 5px;
+        }
+        .fact-text-content {
+            margin-top: 400px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 10px;                  
+            padding: 10px;                        
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="ocean-fact"></div>
+
+        <button type="button" id="prev-fact">Previous</button>
+        <button type="button" id="next-fact">Next</button>
+        <button type="button" id="pause-fact">Pause</button>
+        <button type="button" id="continue-fact">Continue</button>
+
+
+        <div id="update-form">
+            <input type="text" id="size" placeholder="Size" >
+            <input type="text" id="discoveryYear" placeholder="Discovery Year" >
+            <input type="text" id="uniqueFeature" placeholder="Unique Feaute" >
+            <input type="text" id="conservationStatus" placeholder="Conservation Status" >
+            <button id="update-fact">Update Fact</button>
+        </div>
+
+    </div>
+
+
+    <script src="./js/day04_practice1.js"></script>
+</body>
+</html>
