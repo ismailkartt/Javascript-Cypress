@@ -52,9 +52,44 @@ function displayResults(filteredCandidates){
     }
 
     filteredCandidates.forEach(function(candidate){
-        resultsDiv.innerHTML += `<div><h4>Candidate Name: ${candidate.candName}</h4></div>`;
+        resultsDiv.innerHTML += `<div>
+        <h4>Candidate Name: ${candidate.candName}</h4>
+        <p>Country: ${candidate.country}</p>
+        <p>Skills: ${candidate.skills}</p>
+        <p>Experience: ${candidate.experience}</p>
+        </div>`;
     });
-
- 
-
 }
+
+
+function addCandi(){
+    let newName=document.querySelector('#addName').value;
+    let newCountry=document.querySelector('#addCountry').value;
+    let newSkills=document.querySelector('#addSkills').value;
+    let newExp=document.querySelector('#addExp').value;
+
+    let newCandidate = {
+        id:candidates.length,
+        candName:newName,
+        country:newCountry,
+        skills:newSkills,
+        experience:newExp
+    };
+
+    candidates.push(newCandidate);
+    
+    let addedCandiInfo = document.querySelector("#addedCandiInfo0");
+    addedCandiInfo.innerHTML = `<div>
+    <h4>Candidate Name: ${newCandidate.candName}</h4>
+    <p>ID: ${newCandidate.id}</p>
+    <p>Country: ${newCandidate.country}</p>
+    <p>ID: ${newCandidate.skills}</p>
+    <p>ID: ${newCandidate.experience}</p>
+    </div>`;
+}
+
+function removeCandi(){
+    let removeId = parseInt(document.querySelector(`#removeId`));
+    candidates = candidates.filter(candidate => candidate.id != removeId);
+}
+
