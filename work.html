@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
+</head>
+
+<body>
+
+    <input type="number" id="txt">
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="result"></h3>
+    <script>
+
+
+
+        function calculate() {
+            const result = document.getElementById("result");
+            const txtInput = document.getElementById("txtInput");
+
+            let sum = 0;
+
+            let i = txtInput.value;
+            while(i>0){
+                sum += i%10;
+                i = i / 10;
+            }
+            result.innerHTML = sum;
+            return sum;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
