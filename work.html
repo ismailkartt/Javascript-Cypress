@@ -9,17 +9,44 @@
 
 <body>
 
+    <input type="text" id="txtNum">
+    <button onclick="calculate()">Calculate</button>
+
 
     <script>
 
-     function asalSayi(number){
-        if((number%2==0) || (number%3==0) || (number%5==0) || (number%7==0)){
-            return `${number} Asal sayidir`;
+        function calculate() {
+            let txtNum = document.getElementById("txtNum").value;
+
+            const result = isPalidrome(txtNum);
+
+            if (result) {
+                console.log(`${txtNum} palidromdur`);
+
+            } else {
+                console.log(`${txtNum} palidrom degildir`);
+            }
         }
-        return `${number} Asal sayi değildir`;
-     }
-     
-     asalSayi(15);
+
+        function isPalidrome(text) {
+            if (!text) {
+                return false;
+            }
+
+            let result = true;
+
+            let reverse = String(text.split("").reverse().join(""));
+
+            for (let i = 0; i < text.length-1; i++) {
+                if (text.substring(i,i+1) !== reverse.substring(i,i+1)) {
+                    result = false;
+                    break;
+                }
+            }
+            return result;
+        }
+
+
 
     </script>
 
