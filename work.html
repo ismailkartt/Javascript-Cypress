@@ -9,44 +9,14 @@
 
 <body>
 
-    <input type="text" id="txtNum">
-    <button onclick="calculate()">Calculate</button>
+
+    
 
 
     <script>
 
-        function calculate() {
-            let txtNum = document.getElementById("txtNum").value;
-
-            const result = isPalidrome(txtNum);
-
-            if (result) {
-                console.log(`${txtNum} palidromdur`);
-
-            } else {
-                console.log(`${txtNum} palidrom degildir`);
-            }
-        }
-
-        function isPalidrome(text) {
-            if (!text) {
-                return false;
-            }
-
-            let result = true;
-
-            let reverse = String(text.split("").reverse().join(""));
-
-            for (let i = 0; i < text.length-1; i++) {
-                if (text.substring(i,i+1) !== reverse.substring(i,i+1)) {
-                    result = false;
-                    break;
-                }
-            }
-            return result;
-        }
-
-
+        
+       
 
     </script>
 
