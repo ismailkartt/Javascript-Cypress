@@ -16,7 +16,31 @@
     <script>
 
         
-       
+       // Bir prototip nesnesi oluşturuyoruz
+var personPrototype = {
+  // Ortak özellikler
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+  // Ortak bir metod
+  greet: function() {
+    return "Merhaba, ben " + this.fullName();
+  }
+};
+
+// Yeni bir nesne oluşturuyoruz ve prototip olarak 'personPrototype' nesnesini kullanıyoruz
+var john = Object.create(personPrototype);
+console.log(john)
+// Yeni nesnenin özelliklerini ayarlıyoruz
+john.firstName = "John";
+john.lastName = "Doe";
+john.age = 30;
+
+// Yeni nesne üzerinde metodları kullanıyoruz
+console.log(john.fullName()); // John Doe
+console.log(john.greet());    // Merhaba, ben John Doe
+console.log(john.age);    // Merhaba, ben John Doe
+
 
     </script>
 
